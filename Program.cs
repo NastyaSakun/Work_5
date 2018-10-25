@@ -60,9 +60,23 @@ namespace Work_5
             Console.WriteLine(br.ToString());
             Bask_ball bas = new Bask_ball();
             Console.WriteLine(bas.ToString());
+            Console.WriteLine();
+
+
+            Console.WriteLine($"Работа класса Printer:\0");
+
+            Inventar[] array = new Inventar[4];
+            array[0] = skameika;
+            array[1] = maty;
+            array[2] = ball;
+            array[3] = br;
 
             Printer pr = new Printer();
-            Console.WriteLine(Ball.iAmPrinting(pr));
+
+            for (int i=0;i<4;i++)
+            {
+                pr.iAmPrinting(array[i]);
+            }
 
 
 
@@ -177,9 +191,10 @@ namespace Work_5
 
         class Printer:Inventar
         {
-            public virtual void iAmPrinting(Inventar print)
+            public virtual void iAmPrinting(Inventar invent)
             {
-                Console.WriteLine(print.GetType().ToString());
+                Console.WriteLine(invent.GetType());
+                Console.WriteLine(invent.ToString());
             }
         }
     }
